@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block mycaption %}
+<h1 class="text-3xl font-bold underline hover:no-underline">
+    Add New Article
+</h1>
+{% endblock %}
+
+{% block maincontent %}
+<form action="/articles" method="post" class="p-4">
+    <div class="form-control">
+        <label for="title" class="label">
+            <span class="label-text">Title:</span>
+        </label>
+        <input type="text" id="title" name="title" class="input input-bordered" required>
+    </div>
+
+    <div class="form-control">
+        <label for="author" class="label">
+            <span class="label-text">Author:</span>
+        </label>
+        <input type="text" id="author" name="author" class="input input-bordered" required>
+    </div>
+
+    <div class="form-control">
+        <label for="content" class="label">
+            <span class="label-text">Content:</span>
+        </label>
+        <textarea id="content" name="content" class="textarea textarea-bordered" rows="4" required></textarea>
+    </div>
+
+    <div class="form-control">
+        <label for="category" class="label">
+            <span class="label-text">Category:</span>
+        </label>
+        <input type="text" id="category" name="category" class="input input-bordered">
+    </div>
+
+    <div class="form-control">
+        <label for="publishedDate" class="label">
+            <span class="label-text">Published Date:</span>
+        </label>
+        <input type="date" id="publishedDate" name="publishedDate" class="input input-bordered">
+    </div>
+
+    <div class="form-control mt-6">
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </div>
+</form>
+{% endblock %}
