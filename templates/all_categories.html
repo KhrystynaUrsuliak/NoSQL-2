@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block mycaption %}
+<h1 class="text-3xl font-bold underline hover:no-underline">
+                {{caption}}
+
+</h1>
+{% endblock %}
+
+{% block maincontent %}
+
+ <div class="grid gap-2 sm:grid-cols-3 grid-cols-1 ">
+  {% for category in all_categories %}
+
+        <div class="card w-96 bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">{{ category.title }}</h2>
+    <div class="card-actions justify-end">
+    </div>
+  </div>
+</div>
+
+  {% endfor %}
+  </div>
+
+{% endblock %}

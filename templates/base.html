@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+{% block navigation %}
+    <nav class="bg-base-500 p-1">
+        <div class="navbar ">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a>Item 1</a></li>
+           <li>
+          <a>Articles</a>
+          <ul class="p-2">
+            <li><a href="/add-article">Create New Article</a></li>
+            <li><a href="/articles">View All Articles</a></li>
+          </ul>
+        </li>
+
+           <li>
+          <a>Parent</a>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </li>
+        <li>
+            <a>Item 3</a>
+        </li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl" href="/">My Blog</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+        <li>
+            <details>
+          <summary>Articles</summary>
+          <ul class="p-2">
+             <li><a href="/add-article">Create New Article</a></li>
+            <li><a href="/articles">View All Articles</a></li>
+          </ul>
+        </details>
+        </li>
+     <li>
+            <details>
+          <summary>Categories</summary>
+          <ul class="p-2">
+             <li><a href="/add-category">Create New Category</a></li>
+            <li><a href="/categories">View All Categories</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+            <summary>Comments</summary>
+            <ul class="p-2">
+                <li><a href="/add-comment">Add Comment</a></li>
+                <li><a href="/all-comments">View Comments</a></li> <!-- Ensure this link points to a valid route -->
+            </ul>
+        </details>
+    </li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a href="/register">Login</a>
+  </div>
+</div>
+    </nav>
+
+{% endblock %}
+
+
+    <header class="bg-white shadow">
+        <div class="container mx-auto p-4">
+            {% block mycaption %}
+            <h1 class="text-3xl font-bold" style="text-align: center;">
+                Welcome to My Blog!</h1>
+            {% endblock %}
+        </div>
+    </header>
+
+
+    <main class="container mx-auto mt-8">
+{% block maincontent %}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Example blog post snippet -->
+            <article class="p-4 bg-white rounded shadow">
+                <h2 class="text-2xl font-bold mb-2">Post Title 1</h2>
+                <p class="text-gray-700">This is a summary of the blog post content...</p>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Read More
+                </button>
+            </article>
+
+            <!-- Repeat for more blog posts -->
+            <!-- ... -->
+
+{% endblock %}
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 p-4 mt-8">
+        <div class="container mx-auto text-center text-white">
+            © 2024 My Blog
+        </div>
+    </footer>
+
+</body>
+</html>

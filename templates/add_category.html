@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block mycaption %}
+<h1 class="text-3xl font-bold underline hover:no-underline">
+                {{caption}}
+
+</h1>
+{% endblock %}
+
+{% block maincontent %}
+
+    <form action="/categories" method="post" >
+
+        <label class="input input-bordered flex items-center gap-2">
+  Категорія
+  <input type="text" class="grow" placeholder="Введіть категорію" id="title" name="title" required />
+</label>
+        <input type="submit" class="btn btn-outline btn-block btn-accent" value="Submit">
+    </form>
+
+{% endblock %}

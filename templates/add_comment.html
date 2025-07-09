@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block mycaption %}
+<h1 class="text-3xl font-bold underline hover:no-underline">
+    Add a Comment
+</h1>
+{% endblock %}
+
+{% block maincontent %}
+<form action="/submit-comment" method="post" class="p-4">
+    <div class="form-control">
+        <label for="article_id" class="label">
+            <span class="label-text">Choose an Article:</span>
+        </label>
+        <select id="article_id" name="article_id" class="select select-bordered w-full max-w-xs">
+            {% for article in all_articles %}
+            <option value="{{ article._id }}">{{ article.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-control">
+        <label for="author" class="label">
+            <span class="label-text">Your Name:</span>
+        </label>
+        <input type="text" id="author" name="author" class="input input-bordered" required>
+    </div>
+
+    <div class="form-control">
+        <label for="content" class="label">
+            <span class="label-text">Comment:</span>
+        </label>
+        <textarea id="content" name="content" class="textarea textarea-bordered" rows="4" required></textarea>
+    </div>
+
+    <div class="form-control mt-6">
+        <button type="submit" value="Submit" class="btn btn-primary">Submit Comment</button>
+    </div>
+</form>
+{% endblock %}

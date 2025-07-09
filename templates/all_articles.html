@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block mycaption %}
+<h1 class="text-3xl font-bold underline hover:no-underline">
+    All Articles
+</h1>
+{% endblock %}
+
+{% block maincontent %}
+<div class="grid gap-4 sm:grid-cols-3">
+    {% for article in all_articles %}
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title">{{ article.title }}</h2>
+            <p>Author: {{ article.author }}</p>
+            <p>Category: {{ article.category }}</p>
+            <div class="card-actions justify-end">
+                <a href="/article/{{ article._id }}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
